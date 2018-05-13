@@ -35,7 +35,15 @@ func main() {
 
 	// SERVER PART
 	mux := http.NewServeMux()
-	mux.HandleFunc("/", GetIndex)
+	//dir := http.Dir("./templates")
+	//mux.Handle("/", http.FileServer(dir))
+	//mux.Handle("/static/", http.StripPrefix("/static/", fs))
+
+	fs := http.FileServer(http.Dir("templates"))
+	mux.Handle("templates/", http.StripPrefix("/templates/", fs))
+
+	// HANDLERS
+	mux.HandleFunc("/", Index)
 	mux.HandleFunc("/locations", GetLocations)
 
 	// TLS config

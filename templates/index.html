@@ -6,11 +6,12 @@
 		<meta name="author" content="peter daemonna ducai">
 		<meta name="description" content="your admin for asset inventory.">
 		<title>AIDB Portal | your admin for asset inventory.</title>
+		<base href="/">
 		<link rel="icon" href="https://milligram.github.io/images/icon.png">
-		<link rel="stylesheet" href="roboto.woff2">
-		<link rel="stylesheet" href="normalize.css">
-		<link rel="stylesheet" href="milligram.min.css">
-		<link rel="stylesheet" href="main.css">
+		<link type="font/woff2" rel="stylesheet" href="roboto.woff2">
+		<link type="text/html" rel="stylesheet" href="https://localhost//templates/normalize.css">
+		<link type="text/html" rel="stylesheet" href="https://localhost//templates/milligram.min.css">
+		<link type="text/html" rel="stylesheet" href="https://localhost//templates/main.css">
 	</head>
 	<body>
 
@@ -71,7 +72,7 @@
 			</nav>
 
 			<section class="container" id="examples">
-				<h5 class="title">Welcome to main page using {{mytool}}</h5>
+				<h5 class="title">Welcome to main page using {{.}}</h5>
 				<p>You can view more examples of using AIDB.</p>
 				<p>
 					<ul>
@@ -104,7 +105,7 @@
 
 		</main>
 
-		<script src="https://milligram.github.io/scripts/main.js"></script>
+		<script type="text/html" src="main.js"></script>
 
 	</body>
 </html>
