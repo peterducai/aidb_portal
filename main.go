@@ -1,71 +1,31 @@
 package main
 
 import (
-	"crypto/tls"
-	"database/sql"
-	"fmt"
-	"log"
 	"net/http"
 
-	_ "github.com/lib/pq"
+	"github.com/labstack/echo"
+	"github.com/labstack/echo/middleware"
 )
 
-func check(err error) {
-	if err != nil {
-		log.Fatal(err)
-	}
-}
-
-type server struct {
-	db *sql.DB
+//EmptyIndex return index.html
+func EmptyIndex(c echo.Context) error {
+	return c.HTML(http.StatusOK, Header+Content+Footer)
 }
 
 func main() {
+	e := echo.New()
+	// e.AutoTLSManager.HostPolicy = autocert.HostWhitelist("<DOMAIN>")
+	// Cache certificates
+	//e.AutoTLSManager.Cache = autocert.DirCache("/var/www/.cache")
+	//e.Pre(middleware.HTTPSRedirect())      // redirect to HTTPS
+	e.Pre(middleware.WWWRedirect())
+	e.Use(middleware.Recover())
+	e.Use(middleware.Logger())
 
-	fmt.Println("AIDB Portal server")
-	fmt.Println("version 0.1")
+	e.Static("/", "../../web/static/")
 
-	// DB PART
-	db, err := sql.Open("postgres", "database=aidb user=docker password=post123 sslmode=disable")
-	if err != nil {
-		log.Fatal(err)
-	}
-	defer db.Close()
-	//s := server{db: db}
+	e.GET("/", EmptyIndex)
 
-	// SERVER PART
-	mux := http.NewServeMux()
-	//dir := http.Dir("./templates")
-	//mux.Handle("/", http.FileServer(dir))
-	//mux.Handle("/static/", http.StripPrefix("/static/", fs))
-
-	fs := http.FileServer(http.Dir("templates"))
-	mux.Handle("templates/", http.StripPrefix("/templates/", fs))
-
-	// HANDLERS
-	mux.HandleFunc("/", Index)
-	mux.HandleFunc("/locations", GetLocations)
-
-	// TLS config
-	cfg := &tls.Config{
-		MinVersion:               tls.VersionTLS12,
-		CurvePreferences:         []tls.CurveID{tls.CurveP521, tls.CurveP384, tls.CurveP256},
-		PreferServerCipherSuites: true,
-		CipherSuites: []uint16{
-			tls.TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384,
-			tls.TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA,
-			tls.TLS_RSA_WITH_AES_256_GCM_SHA384,
-			tls.TLS_RSA_WITH_AES_256_CBC_SHA,
-		},
-	}
-
-	// SERVER config
-	srv := &http.Server{
-		Addr:         ":443",
-		Handler:      mux,
-		TLSConfig:    cfg,
-		TLSNextProto: make(map[string]func(*http.Server, *tls.Conn, http.Handler), 0),
-	}
-
-	log.Fatal(srv.ListenAndServeTLS("server.crt", "server.key"))
+	//e.Logger.Fatal(e.StartAutoTLS(":443"))
+	e.Logger.Fatal(e.Start(":80"))
 }
