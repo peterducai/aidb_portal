@@ -4,7 +4,7 @@ import "database/sql"
 
 //Location of data center
 type Location struct {
-	id          sql.NullString
+	id          sql.NullInt64
 	description sql.NullString
 	country     sql.NullString
 	town        sql.NullString
