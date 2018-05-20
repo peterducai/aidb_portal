@@ -13,6 +13,7 @@ func EmptyIndex(c echo.Context) error {
 }
 
 func main() {
+
 	e := echo.New()
 	// e.AutoTLSManager.HostPolicy = autocert.HostWhitelist("<DOMAIN>")
 	// Cache certificates
@@ -22,9 +23,13 @@ func main() {
 	e.Use(middleware.Recover())
 	e.Use(middleware.Logger())
 
+	InitDB("postgres://docker:post123@localhost/aidb?sslmode=disable")
+
+	//ROUTERS
 	e.Static("/", "../../web/static/")
 
 	e.GET("/", EmptyIndex)
+	e.GET("/locations", GetLocations)
 
 	//e.Logger.Fatal(e.StartAutoTLS(":443"))
 	e.Logger.Fatal(e.Start(":80"))
