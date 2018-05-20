@@ -1,13 +1,15 @@
 package main
 
+import "database/sql"
+
 //Location of data center
 type Location struct {
-	id          int
-	description string
-	country     string
-	town        string
-	street      string
-	zipcode     string
+	id          sql.NullString
+	description sql.NullString
+	country     sql.NullString
+	town        sql.NullString
+	street      sql.NullString
+	zipcode     sql.NullString
 }
 
 //AllLocations will return locations
