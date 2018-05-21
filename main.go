@@ -31,6 +31,7 @@ func main() {
 	e.GET("/", EmptyIndex)
 	e.GET("/locations", GetLocations)
 	e.GET("/rooms", GetRooms)
+	e.GET("/racks", GetRacks)
 
 	//e.Logger.Fatal(e.StartAutoTLS(":443"))
 	e.Logger.Fatal(e.Start(":80"))
