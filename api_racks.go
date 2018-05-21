@@ -13,7 +13,7 @@ func GetRacks(c echo.Context) error {
 	racks, err := AllRacks()
 	if err != nil {
 		fmt.Println(err)
-		return c.String(http.StatusBadRequest, "333")
+		return c.String(http.StatusBadRequest, "db connection error")
 	}
 	for _, rm := range racks {
 		fmt.Println(rm.id, rm.rackName, rm.rackSize, rm.purchaseOrder, rm.rack)

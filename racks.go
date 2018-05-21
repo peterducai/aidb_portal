@@ -13,7 +13,7 @@ type Rack struct {
 
 //AllRacks will return Racks
 func AllRacks() ([]*Rack, error) {
-	rows, err := db.Query("SELECT * FROM aidb.Rack")
+	rows, err := db.Query("SELECT * FROM aidb.rack")
 	if err != nil {
 		return nil, err
 	}
