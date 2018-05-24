@@ -9,7 +9,7 @@ import (
 
 //EmptyIndex return index.html
 func EmptyIndex(c echo.Context) error {
-	return c.HTML(http.StatusOK, Header+Content+Footer)
+	return c.HTML(http.StatusOK, HEADER+"empty index file"+FOOTER)
 }
 
 func main() {
