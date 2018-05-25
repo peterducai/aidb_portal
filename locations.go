@@ -62,7 +62,6 @@ func AllLocations() ([]*Location, error) {
 				fmt.Println(columns[i], ": ", value)
 			}
 		}
-
 		//---------------------
 
 		locs = append(locs, lc)
