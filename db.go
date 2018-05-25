@@ -21,3 +21,8 @@ func InitDB(dataSourceName string) {
 		log.Panic(err)
 	}
 }
+
+// //FormatResults will change data to string (for html table)
+// func FormatResults(rows QueryRow) {
+
+// }

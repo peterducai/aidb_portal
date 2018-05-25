@@ -11,28 +11,22 @@ import (
 func GetLocations(c echo.Context) error {
 
 	locs, err := AllLocations()
-	var tabl = "<table>"
-	var tabhead = `<tr>
-    <th>ID</th>
-    <th>Description</th>
-	<th>Country</th>
-	<th>Town</th>
-	<th>Street</th>
-  </tr>`
 
 	if err != nil {
 		fmt.Println(err)
 		return c.String(http.StatusBadRequest, "issue with DB connection")
 	}
 
-	tabl = tabl + tabhead
+	//create new html table and populate it with data
+	var mytab HtmlTable
+	mytab.header = "<table><tr>" //here append <th> tags and </tr> which is table header
+	mytab.rows = "<tr><td>"      //here append <td> tags and </td></tr> which is table data
+	mytab.footer = "</table>"
 
 	for _, lc := range locs {
-		fmt.Println(lc.id, lc.description, lc.country, lc.town, lc.street)
-		rw := fmt.Sprintln("<tr><td>", lc.id, "</td><td>", lc.description, "</td><td>", lc.country, "</td><td>", lc.town, "</td><td>", lc.street, "</td>")
-		tabl = tabl + rw
+		rw := fmt.Sprintln("</td><td>", lc.description, "</td><td>", lc.country, "</td><td>", lc.town, "</td><td>", lc.street, "</td>")
+		//tabl = tabl + rw
 	}
-	tabl = tabl + "</tr></table>"
 
-	return c.HTML(http.StatusOK, HEADER+tabl+FOOTER)
+	return c.HTML(http.StatusOK, HEADER+mytab.header+mytab.rows+mytab.footer+FOOTER)
 }

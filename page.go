@@ -1,5 +1,12 @@
 package main
 
+//HtmlTable table in html with data
+type HtmlTable struct {
+	header string
+	rows   string
+	footer string
+}
+
 //HEADER of webpage
 const HEADER = `<!DOCTYPE html>
 <html lang="en">
