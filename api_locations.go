@@ -23,10 +23,12 @@ func GetLocations(c echo.Context) error {
 	mytab.rows = "<tr><td>"      //here append <td> tags and </td></tr> which is table data
 	mytab.footer = "</table>"
 
-	for _, lc := range locs {
-		rw := fmt.Sprintln("</td><td>", lc.description, "</td><td>", lc.country, "</td><td>", lc.town, "</td><td>", lc.street, "</td>")
-		//tabl = tabl + rw
-	}
+	//for _, lc := range locs {
+	//	rw := fmt.Sprintln("</td><td>", lc.description, "</td><td>", lc.country, "</td><td>", lc.town, "</td><td>", lc.street, "</td>")
+	//	//tabl = tabl + rw
+	//}
+	fmt.Println()
+	fmt.Println(locs)
 
 	return c.HTML(http.StatusOK, HEADER+mytab.header+mytab.rows+mytab.footer+FOOTER)
 }

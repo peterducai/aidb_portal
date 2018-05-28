@@ -33,8 +33,10 @@ func main() {
 	e.GET("/rooms", GetRooms)
 	e.GET("/racks", GetRacks)
 
-	//POST
+	//JUMPS
+	e.GET("/jumps", CreateJump)
 	e.POST("/jumps", CreateJump)
+
 
 	//e.Logger.Fatal(e.StartAutoTLS(":443"))
 	e.Logger.Fatal(e.Start(":80"))
