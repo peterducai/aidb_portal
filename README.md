@@ -9,5 +9,24 @@ web portal for aidb
 
 ## Design
 
-* Only data that can be entered by human are location, room, and jump servers
-* **HW data are read-only** and should be populated only by data collectors. (trust no human)
+### Main principles
+
+**Only data that can be entered by human are location, room, and jump servers** as this is only data that cannot be scanned.
+
+**HW data are read-only** and should be populated only by data collectors (programs). Experience tells us that humans makes mistakes and thus should not be allowed in certain data collecting.
+
+# Dependencies
+
+## SSH
+
+go.crypto/ssh is an implementation of SSH protocol in Go.
+
+> go get golang.org/x/crypto/ssh
+
+## Web server
+
+Installation
+
+>  go get -u github.com/labstack/echo/...
+
+more can be found at [Echo guide](https://echo.labstack.com/guide)
