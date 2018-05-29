@@ -34,7 +34,7 @@ func main() {
 	e.GET("/racks", GetRacks)
 
 	//JUMPS
-	e.GET("/jumps", CreateJump)
+	e.GET("/jumps", ListJumps)
 	e.POST("/jumps", CreateJump)
 
 	//script executor
