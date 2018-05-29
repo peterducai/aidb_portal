@@ -38,7 +38,7 @@ func main() {
 	e.POST("/jumps", CreateJump)
 
 	//script executor
-	e.GET("/script", ScriptRunner)
+	e.GET("/script/:cmd", ScriptRunner)
 
 
 	//e.Logger.Fatal(e.StartAutoTLS(":443"))
