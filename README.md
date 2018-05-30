@@ -5,7 +5,13 @@ web portal for aidb
 ## Technology
 
 * http/https server written in Go using Echo framework
+* UI using [PatternFly](http://www.patternfly.org) (TODO)
 * everything else is handled by external scripts
+
+
+## Development
+
+> go get github.com/peterducai/aidb_portal
 
 ## Design
 
