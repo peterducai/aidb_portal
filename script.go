@@ -8,8 +8,6 @@ import (
 	"log"
 )
 
-const ShellToUse = "bash"
-
 //AllLocations will return locations
 func RunScript(script string) (error, string, string) {
 
@@ -29,7 +27,7 @@ func RunScript(script string) (error, string, string) {
 
 	var stdout bytes.Buffer
 	var stderr bytes.Buffer
-	cmd := exec.Command(ShellToUse, "", curd+"/scripts/"+script+".sh") // "-c", script)
+	cmd := exec.Command(curd+"/scripts/"+script+".sh", "", ) // "-c", script)
 	cmd.Stdout = &stdout
 	cmd.Stderr = &stderr
 	errun := cmd.Run()
