@@ -1,4 +1,6 @@
 # aidb_portal
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fpeterducai%2Faidb_portal.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fpeterducai%2Faidb_portal?ref=badge_shield)
+
 
 web portal for aidb
 
@@ -40,3 +42,6 @@ more can be found at [Echo guide](https://echo.labstack.com/guide)
 > go get -u github.com/lib/pq
 
 for connecting to AIDB (postgresql 10)
+
+## License
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fpeterducai%2Faidb_portal.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fpeterducai%2Faidb_portal?ref=badge_large)
