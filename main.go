@@ -2,9 +2,10 @@ package main
 
 import (
 	"net/http"
-	"api"
+
 	"github.com/labstack/echo"
 	"github.com/labstack/echo/middleware"
+	"golang.org/x/crypto/acme/autocert"
 )
 
 //EmptyIndex return index.html
@@ -15,15 +16,15 @@ func EmptyIndex(c echo.Context) error {
 func main() {
 
 	e := echo.New()
-	// e.AutoTLSManager.HostPolicy = autocert.HostWhitelist("<DOMAIN>")
+	e.AutoTLSManager.HostPolicy = autocert.HostWhitelist("<DOMAIN>")
 	// Cache certificates
-	//e.AutoTLSManager.Cache = autocert.DirCache("/var/www/.cache")
-	//e.Pre(middleware.HTTPSRedirect())      // redirect to HTTPS
+	e.AutoTLSManager.Cache = autocert.DirCache("/var/www/.cache")
+	e.Pre(middleware.HTTPSRedirect()) // redirect to HTTPS
 	e.Pre(middleware.WWWRedirect())
 	e.Use(middleware.Recover())
 	e.Use(middleware.Logger())
 
-	InitDB("postgres://docker:post123@localhost/aidb?sslmode=disable")
+	//InitDB("postgres://docker:post123@localhost/aidb?sslmode=disable")
 
 	//ROUTERS
 	e.Static("/", "../web/static/")
@@ -40,7 +41,6 @@ func main() {
 	//script executor
 	e.GET("/script/:cmd", ScriptRunner)
 
-
-	//e.Logger.Fatal(e.StartAutoTLS(":443"))
-	e.Logger.Fatal(e.Start(":80"))
+	e.Logger.Fatal(e.StartAutoTLS(":443"))
+	//e.Logger.Fatal(e.Start(":80"))
 }

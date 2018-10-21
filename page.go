@@ -1,7 +1,7 @@
 package main
 
-//HtmlTable table in html with data
-type HtmlTable struct {
+//HTMLTable table in html with data
+type HTMLTable struct {
 	header string
 	rows   string
 	footer string
