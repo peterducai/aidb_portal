@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en" class="pf-m-redhat-font">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- Include latest PatternFly CSS via CDN -->
+  <link 
+    rel="stylesheet" 
+    href="https://unpkg.com/@patternfly/patternfly/patternfly.css" 
+    crossorigin="anonymous"
+  >
+  <title>AIDB</title>
+</head>
+<body>
+  <div class="pf-c-page" id="card-view">
+  <a class="pf-c-skip-to-content pf-c-button pf-m-primary" href="#main-content-card-view">Skip to content</a>
+  <header role="banner" class="pf-c-page__header">
+    <div class="pf-c-page__header-brand">
+      <div class="pf-c-page__header-brand-toggle">
+        <button class="pf-c-button pf-m-plain" type="button" id="card-view-nav-toggle" aria-label="Global navigation" aria-expanded="true" aria-controls="card-view-primary-nav">
+          <i class="fas fa-bars" aria-hidden="true"></i>
+        </button>
+      </div>
+      <a class="pf-c-page__header-brand-link">
+        <img class="pf-c-brand" src="assets/img/brand.svg" alt="Patternfly Logo" />
+      </a>
+    </div>
+    <div class="pf-c-page__header-tools">
+      <div class="pf-c-page__header-tools-group pf-m-icons">
+        <button class="pf-c-button pf-m-plain" type="button" aria-label="Alerts">
+          <i class="fas fa-bell" aria-hidden="true"></i>
+        </button>
+        <button class="pf-c-button pf-m-plain" type="button" aria-label="Settings">
+          <i class="fas fa-cog" aria-hidden="true"></i>
+        </button>
+      </div>
+      <div class="pf-c-page__header-tools-group">
+        <div class="pf-c-dropdown">
+          <button class="pf-c-dropdown__toggle pf-m-mobile pf-m-plain" id="card-view-dropdown-kebab-right-aligned-1-button" aria-expanded="false" aria-label="Actions">
+            <i class="fas fa-ellipsis-v" aria-hidden="true"></i>
+          </button>
+          <ul class="pf-c-dropdown__menu pf-m-align-right" aria-labelledby="card-view-dropdown-kebab-right-aligned-1-button" hidden>
+            <li>
+              <a class="pf-c-dropdown__menu-item" href="#">Link</a>
+            </li>
+            <li>
+              <button class="pf-c-dropdown__menu-item">Action</button>
+            </li>
+            <li>
+              <a class="pf-c-dropdown__menu-item pf-m-disabled" aria-disabled="true" tabindex="-1" href="#">Disabled link</a>
+            </li>
+            <li>
+              <button class="pf-c-dropdown__menu-item" disabled>Disabled action</button>
+            </li>
+            <li class="pf-c-dropdown__separator" role="separator"></li>
+            <li>
+              <a class="pf-c-dropdown__menu-item" href="#">Separated link</a>
+            </li>
+          </ul>
+        </div>
+        <div class="pf-m-user">
+          <div class="pf-c-dropdown">
+            <button class="pf-c-dropdown__toggle pf-m-plain" id="card-view-dropdown-button" aria-expanded="false">
+              <span class="pf-c-dropdown__toggle-text">John Smith</span>
+              <i class="fas fa-caret-down pf-c-dropdown__toggle-icon" aria-hidden="true"></i>
+            </button>
+            <div class="pf-c-dropdown__menu" hidden>[Panel contents here]</div>
+          </div>
+        </div>
+      </div>
+      <img class="pf-c-avatar" src="assets/img/RH_atomic.svg" alt="Avatar image" />
+    </div>
+  </header>
+  <div class="pf-c-page__sidebar pf-m-dark">
+    <div class="pf-c-page__sidebar-body">
+      <nav class="pf-c-nav pf-m-dark" id="card-view-primary-nav" aria-label="Global">
+        <ul class="pf-c-nav__list">
+            <li class="pf-c-nav__item">
+                <a href="main.html" class="pf-c-nav__link pf-m-current" aria-current="page">Summary</a>
+              </li>
+              <li class="pf-c-nav__item">
+                <a href="#" class="pf-c-nav__link">Map</a>
+              </li>
+              <li class="pf-c-nav__item">
+                <a href="#" class="pf-c-nav__link">Groups</a>
+              </li>
+              <li class="pf-c-nav__item">
+                <a href="#" class="pf-c-nav__link">Network services</a>
+              </li>
+              <li class="pf-c-nav__item">
+                  <a href="wizard.html" class="pf-c-nav__link">Inventory planner</a>
+                </li>
+                <li class="pf-c-nav__item">
+                      <a href="templates.html" class="pf-c-nav__link">Templates</a>
+                    </li>
+              <li class="pf-c-nav__item">
+                <a href="about.html" class="pf-c-nav__link">About</a>
+              </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+  <main role="main" class="pf-c-page__main" tabindex="-1" id="main-content-card-view">
+    <section class="pf-c-page__main-section pf-m-light">
+      <div class="pf-c-content">
+        <h1>Projects</h1>
+        <p>This is a demo that showcases Patternfly Cards.</p>
+      </div>
+    </section>
+    <!-- <section class="pf-c-page__main-section pf-m-no-padding pf-m-light">
+      <div class="pf-c-toolbar" id="toolbar-card-example">
+        <div class="pf-c-dropdown pf-c-toolbar__bulk-select">
+          <div class="pf-c-dropdown__toggle pf-m-split-button">
+            <label class="pf-c-dropdown__toggle-check" for="toolbar-card-example-split-button-dropdown-simple-example-check">
+              <input type="checkbox" id="toolbar-card-example-split-button-dropdown-simple-example-check" aria-label="Select all" />
+            </label>
+            <button class="pf-c-dropdown__toggle-button" id="toolbar-card-example-split-button-dropdown-simple-example-button" aria-label="Select" aria-expanded="false">
+              <i class="fas fa-caret-down" aria-hidden="true"></i>
+            </button>
+          </div>
+          <ul class="pf-c-dropdown__menu" aria-labelledby="toolbar-simple-split-button-dropdown-simple-example-button" hidden>
+            <li>
+              <button class="pf-c-dropdown__menu-item">Select all</button>
+            </li>
+            <li>
+              <button class="pf-c-dropdown__menu-item">Select none</button>
+            </li>
+            <li>
+              <button class="pf-c-dropdown__menu-item">Other action</button>
+            </li>
+          </ul>
+        </div>
+        <button class="pf-c-button pf-m-plain pf-c-toolbar__filter-toggle" type="button" aria-label="Filter results">
+          <i class="fas fa-filter" aria-hidden="true"></i>
+        </button>
+        <div class="pf-c-toolbar__filter">
+          <div class="pf-c-select">
+            <span id="toolbar-card-example-select-checkbox-label" hidden>Choose one</span>
+            <button class="pf-c-select__toggle" id="toolbar-card-example-select-checkbox-toggle" aria-haspopup="true" aria-expanded="false" aria-labelledby="toolbar-card-example-select-checkbox-label toolbar-card-example-select-checkbox-toggle">
+              <div class="pf-c-select__toggle-wrapper">
+                <span class="pf-c-select__toggle-text">
+                  <i class="fas fa-filter" aria-hidden="true"></i>
+Creator
+                </span>
+              </div>
+              <i class="fas fa-caret-down pf-c-select__toggle-arrow" aria-hidden="true"></i>
+            </button>
+            <div class="pf-c-select__menu" hidden>
+              <form novalidate class="pf-c-form">
+                <fieldset class="pf-c-form__fieldset" aria-labelledby="toolbar-card-example-select-checkbox-label">
+                  <label class="pf-c-check pf-c-select__menu-item" for="toolbar-card-example-select-checkbox-active">
+                    <input class="pf-c-check__input" type="checkbox" type="checkbox" id="toolbar-card-example-select-checkbox-active" name="toolbar-card-example-select-checkbox-active" />
+                    <span class="pf-c-check__label">Active</span>
+                  </label>
+                  <label class="pf-c-check pf-c-select__menu-item" for="toolbar-card-example-select-checkbox-cancelled">
+                    <input class="pf-c-check__input" type="checkbox" type="checkbox" id="toolbar-card-example-select-checkbox-cancelled" name="toolbar-card-example-select-checkbox-cancelled" />
+                    <span class="pf-c-check__label">Cancelled</span>
+                  </label>
+                  <label class="pf-c-check pf-c-select__menu-item" for="toolbar-card-example-select-checkbox-paused">
+                    <input class="pf-c-check__input" type="checkbox" type="checkbox" id="toolbar-card-example-select-checkbox-paused" name="toolbar-card-example-select-checkbox-paused" />
+                    <span class="pf-c-check__label">Paused</span>
+                  </label>
+                  <label class="pf-c-check pf-c-select__menu-item" for="toolbar-card-example-select-checkbox-warning">
+                    <input class="pf-c-check__input" type="checkbox" type="checkbox" id="toolbar-card-example-select-checkbox-warning" name="toolbar-card-example-select-checkbox-warning" />
+                    <span class="pf-c-check__label">Warning</span>
+                  </label>
+                  <label class="pf-c-check pf-c-select__menu-item" for="toolbar-card-example-select-checkbox-restarted">
+                    <input class="pf-c-check__input" type="checkbox" type="checkbox" id="toolbar-card-example-select-checkbox-restarted" name="toolbar-card-example-select-checkbox-restarted" />
+                    <span class="pf-c-check__label">Restarted</span>
+                  </label>
+                </fieldset>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="pf-c-toolbar__action-group">
+          <button class="pf-c-button pf-m-primary" type="button">Create a project</button>
+        </div>
+        <div class="pf-c-dropdown pf-c-toolbar__action-list">
+          <button class="pf-c-dropdown__toggle pf-m-plain" id="toolbar-card-example-dropdown-simple-button" aria-expanded="false" aria-label="Actions">
+            <i class="fas fa-ellipsis-v" aria-hidden="true"></i>
+          </button>
+          <div class="pf-c-dropdown__menu" hidden>[Panel contents here]</div>
+        </div>
+        <div class="pf-c-pagination" aria-label="Element pagination">
+          <div class="pf-c-pagination__total-items">20 Items</div>
+          <div class="pf-c-options-menu">
+            <div class="pf-c-options-menu__toggle pf-m-text pf-m-plain">
+              <span class="pf-c-options-menu__toggle-text">
+                <b>1 - 10</b>of
+                <b>20</b>
+              </span>
+              <button class="pf-c-options-menu__toggle-button" id="toolbar-card-example-pagination-options-menu-toggle" aria-haspopup="listbox" aria-expanded="false" aria-label="Select">
+                <i class="fas fa-caret-down" aria-hidden="true"></i>
+              </button>
+            </div>
+            <ul class="pf-c-options-menu__menu" aria-labelledby="toolbar-card-example-pagination-options-menu-toggle" hidden>
+              <li>
+                <button class="pf-c-options-menu__menu-item">5
+                  <span class="pf-c-pagination__menu-text">per page</span>
+                </button>
+              </li>
+              <li>
+                <button class="pf-c-options-menu__menu-item">10
+                  <span class="pf-c-pagination__menu-text">per page</span>
+                  <i class="fas fa-check pf-c-options-menu__menu-item-icon" aria-hidden="true"></i>
+                </button>
+              </li>
+              <li>
+                <button class="pf-c-options-menu__menu-item">20
+                  <span class="pf-c-pagination__menu-text">per page</span>
+                </button>
+              </li>
+            </ul>
+          </div>
+          <nav class="pf-c-pagination__nav" aria-label="Pagination">
+            <button class="pf-c-button pf-m-plain pf-m-disabled" type="button" aria-label="Go to first page" aria-disabled="true">
+              <i class="fas fa-angle-double-left" aria-hidden="true"></i>
+            </button>
+            <button class="pf-c-button pf-m-plain pf-m-disabled" type="button" aria-label="Go to previous page" aria-disabled="true">
+              <i class="fas fa-angle-left" aria-hidden="true"></i>
+            </button>
+            <div class="pf-c-pagination__nav-page-select" aria-label="Current page 1 of 2">
+              <input class="pf-c-form-control" aria-label="Current page" type="number" min="1" max="2" value="1" />
+              <span aria-hidden="true">of 2</span>
+            </div>
+            <button class="pf-c-button pf-m-plain" type="button" aria-label="Go to next page">
+              <i class="fas fa-angle-right" aria-hidden="true"></i>
+            </button>
+            <button class="pf-c-button pf-m-plain" type="button" aria-label="Go to last page">
+              <i class="fas fa-angle-double-right" aria-hidden="true"></i>
+            </button>
+          </nav>
+        </div>
+        <div class="pf-c-toolbar__filter-list"></div>
+      </div>
+    </section> -->
+    <section class="pf-c-page__main-section">
+      <div class="pf-l-gallery pf-m-gutter">
+        <div class="pf-c-card pf-m-hoverable pf-m-compact" id="card-1">
+          <div class="pf-c-card__head">
+            <img src="assets/img/github-logo.svg" alt="Logo" />
+          </div>
+          <div class="pf-c-card__header pf-c-title pf-m-md">
+            <p id="card-1-check-label">Generic</p>
+            <div class="pf-c-content">
+              <small>Provided by daemonna</small>
+            </div>
+          </div>
+          <div class="pf-c-card__body">Generic template for regular business unit.</div>
+        </div>
+        <div class="pf-c-card pf-m-hoverable pf-m-compact" id="card-2">
+          <div class="pf-c-card__head">
+            <img src="assets/img/github-logo.svg" width="60px" alt="Logo" />
+          </div>
+          <div class="pf-c-card__header pf-c-title pf-m-md">
+            <p id="card-2-check-label">Goverment</p>
+            <div class="pf-c-content">
+              <small>Provided by daemonna</small>
+            </div>
+          </div>
+          <div class="pf-c-card__body">Specialized profile for federal agencies.</div>
+        </div>
+        <div class="pf-c-card pf-m-hoverable pf-m-compact" id="card-3">
+          <div class="pf-c-card__head">
+            <img src="/assets/images/camel-spark_200x150.png" width="60px" alt="Logo" />
+          </div>
+          <div class="pf-c-card__header pf-c-title pf-m-md">
+            <p id="card-3-check-label">Insurance</p>
+            <div class="pf-c-content">
+              <small>Provided by Red Hat</small>
+            </div>
+          </div>
+          <div class="pf-c-card__body">This documentation page covers the Apache Spark component for the Apache Camel.</div>
+        </div>
+        <div class="pf-c-card pf-m-hoverable pf-m-compact" id="card-4">
+          <div class="pf-c-card__head">
+            <img src="/assets/images/camel-avro_200x150.png" width="60px" alt="Logo" />
+            <div class="pf-c-card__actions">
+              <div class="pf-c-dropdown">
+                <button class="pf-c-dropdown__toggle pf-m-plain" id="card-4-dropdown-kebab-right-aligned-button" aria-expanded="false" aria-label="Actions">
+                  <i class="fas fa-ellipsis-v" aria-hidden="true"></i>
+                </button>
+                <ul class="pf-c-dropdown__menu" aria-labelledby="card-4-dropdown-kebab-right-aligned-button" hidden>
+                  <li>
+                    <a class="pf-c-dropdown__menu-item" href="#">Link</a>
+                  </li>
+                  <li>
+                    <button class="pf-c-dropdown__menu-item">Action</button>
+                  </li>
+                  <li>
+                    <a class="pf-c-dropdown__menu-item pf-m-disabled" aria-disabled="true" tabindex="-1" href="#">Disabled link</a>
+                  </li>
+                  <li>
+                    <button class="pf-c-dropdown__menu-item" disabled>Disabled action</button>
+                  </li>
+                  <li class="pf-c-dropdown__separator" role="separator"></li>
+                  <li>
+                    <a class="pf-c-dropdown__menu-item" href="#">Separated link</a>
+                  </li>
+                </ul>
+              </div>
+              <input type="checkbox" id="card-4-check" name="card-4-check" aria-labelledby="card-4-check-label" />
+            </div>
+          </div>
+          
+          <div class="pf-c-card__header pf-c-title pf-m-md">
+            <p id="card-8-check-label">JBoss Data Grid</p>
+            <div class="pf-c-content">
+              <small>Provided by Red Hat</small>
+            </div>
+          </div>
+          <div class="pf-c-card__body">Read or write to a fully-supported distributed cache and data grid for faster integration services.</div>
+        </div>
+        <div class="pf-c-card pf-m-hoverable pf-m-compact" id="card-9">
+          <div class="pf-c-card__head">
+            <img src="/assets/images/FuseConnector_Icons_REST.png" width="60px" alt="Logo" />
+            <div class="pf-c-card__actions">
+              <div class="pf-c-dropdown">
+                <button class="pf-c-dropdown__toggle pf-m-plain" id="card-9-dropdown-kebab-right-aligned-button" aria-expanded="false" aria-label="Actions">
+                  <i class="fas fa-ellipsis-v" aria-hidden="true"></i>
+                </button>
+                <ul class="pf-c-dropdown__menu" aria-labelledby="card-9-dropdown-kebab-right-aligned-button" hidden>
+                  <li>
+                    <a class="pf-c-dropdown__menu-item" href="#">Link</a>
+                  </li>
+                  <li>
+                    <button class="pf-c-dropdown__menu-item">Action</button>
+                  </li>
+                  <li>
+                    <a class="pf-c-dropdown__menu-item pf-m-disabled" aria-disabled="true" tabindex="-1" href="#">Disabled link</a>
+                  </li>
+                  <li>
+                    <button class="pf-c-dropdown__menu-item" disabled>Disabled action</button>
+                  </li>
+                  <li class="pf-c-dropdown__separator" role="separator"></li>
+                  <li>
+                    <a class="pf-c-dropdown__menu-item" href="#">Separated link</a>
+                  </li>
+                </ul>
+              </div>
+              <input type="checkbox" id="card-9-check" name="card-9-check" aria-labelledby="card-9-check-label" />
+            </div>
+          </div>
+          <div class="pf-c-card__header pf-c-title pf-m-md">
+            <p id="card-9-check-label">REST</p>
+            <div class="pf-c-content">
+              <small>Provided by Red Hat</small>
+            </div>
+          </div>
+          <div class="pf-c-card__body">The rest component allows to define REST endpoints (consumer) using the Rest DSL and plugin to other Camel components as the REST transport. From Camel 2.18 onwards the rest component can also be used as a client (producer) to call REST services.</div>
+        </div>
+        <div class="pf-c-card pf-m-hoverable pf-m-compact" id="card-10">
+          <div class="pf-c-card__head">
+            <img src="/assets/images/camel-swagger-java_200x150.png" width="60px" alt="Logo" />
+            <div class="pf-c-card__actions">
+              <div class="pf-c-dropdown">
+                <button class="pf-c-dropdown__toggle pf-m-plain" id="card-10-dropdown-kebab-right-aligned-button" aria-expanded="false" aria-label="Actions">
+                  <i class="fas fa-ellipsis-v" aria-hidden="true"></i>
+                </button>
+                <ul class="pf-c-dropdown__menu" aria-labelledby="card-10-dropdown-kebab-right-aligned-button" hidden>
+                  <li>
+                    <a class="pf-c-dropdown__menu-item" href="#">Link</a>
+                  </li>
+                  <li>
+                    <button class="pf-c-dropdown__menu-item">Action</button>
+                  </li>
+                  <li>
+                    <a class="pf-c-dropdown__menu-item pf-m-disabled" aria-disabled="true" tabindex="-1" href="#">Disabled link</a>
+                  </li>
+                  <li>
+                    <button class="pf-c-dropdown__menu-item" disabled>Disabled action</button>
+                  </li>
+                  <li class="pf-c-dropdown__separator" role="separator"></li>
+                  <li>
+                    <a class="pf-c-dropdown__menu-item" href="#">Separated link</a>
+                  </li>
+                </ul>
+              </div>
+              <input type="checkbox" id="card-10-check" name="card-10-check" aria-labelledby="card-10-check-label" />
+            </div>
+          </div>
+          <div class="pf-c-card__header pf-c-title pf-m-md">
+            <p id="card-10-check-label">SWAGGER</p>
+            <div class="pf-c-content">
+              <small>Provided by Red Hat</small>
+            </div>
+          </div>
+          <div class="pf-c-card__body">Expose REST services and their APIs using Swagger specification.</div>
+        </div>
+      </div>
+    </section>
+  </main>
+</div>
+</body>
+</html>
