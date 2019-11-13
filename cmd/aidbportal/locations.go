@@ -1,4 +1,4 @@
-package main
+package aidbportal
 
 import (
 	"database/sql"
@@ -6,7 +6,7 @@ import (
 )
 
 //Location of data center
-type Jumps struct {
+type Location struct {
 	id          sql.NullInt64
 	description sql.NullString
 	country     sql.NullString
@@ -15,9 +15,9 @@ type Jumps struct {
 	zipcode     sql.NullString
 }
 
-//AllJumps will return locations
-func AllJumps() ([]*Location, error) {
-	rows, err := db.Query("SELECT * FROM aidb.jumpservers")
+//AllLocations will return locations
+func AllLocations() ([]*Location, error) {
+	rows, err := db.Query("SELECT * FROM aidb.location")
 	if err != nil {
 		return nil, err
 	}

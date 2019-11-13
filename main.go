@@ -6,6 +6,8 @@ import (
 	"github.com/labstack/echo"
 	"github.com/labstack/echo/middleware"
 	"golang.org/x/crypto/acme/autocert"
+
+	"github.com/peterducai/aidb_portal/cmd/aidbportal"
 )
 
 //EmptyIndex return index.html
@@ -30,7 +32,7 @@ func main() {
 	e.Static("/", "../web/static/")
 
 	e.GET("/", EmptyIndex)
-	e.GET("/locations", GetLocations)
+	e.GET("/locations", aidbportal.GetLocations)
 	e.GET("/rooms", GetRooms)
 	e.GET("/racks", GetRacks)
 

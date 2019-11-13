@@ -1,4 +1,4 @@
-package main
+package aidbportal
 
 //HTMLTable table in html with data
 type HTMLTable struct {

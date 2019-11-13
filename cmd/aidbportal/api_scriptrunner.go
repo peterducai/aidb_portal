@@ -1,10 +1,10 @@
-package main
+package aidbportal
 
 import (
-	"github.com/labstack/echo"
-	"net/http"
 	"log"
+	"net/http"
 
+	"github.com/labstack/echo"
 )
 
 //ScriptRunner get locations

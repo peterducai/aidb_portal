@@ -1,4 +1,4 @@
-package main
+package aidbportal
 
 import (
 	"database/sql"

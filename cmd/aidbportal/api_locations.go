@@ -1,32 +1,16 @@
-package main
+package aidbportal
 
 import (
+	"fmt"
 	"net/http"
 
 	"github.com/labstack/echo"
-	"fmt"
 )
 
-//CreateJump get locations
-func CreateJump(c echo.Context) error {
+//GetLocations get locations
+func GetLocations(c echo.Context) error {
 
-	//jmps, err := AllJumps()
-	//
-	//if err != nil {
-	//	fmt.Println(err)
-	//	return c.String(http.StatusBadRequest, "issue with DB connection - jumps call")
-	//}
-
-	jumpname := c.FormValue("jumpname")
-
-
-	return c.HTML(http.StatusOK, HEADER+jumpname+FOOTER)
-}
-
-//ListJumps get locations
-func ListJumps(c echo.Context) error {
-
-	locs, err := AllJumps()
+	locs, err := AllLocations()
 
 	if err != nil {
 		fmt.Println(err)
