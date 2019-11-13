@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" class="pf-m-redhat-font">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- Include latest PatternFly CSS via CDN -->
+  <link 
+    rel="stylesheet" 
+    href="https://unpkg.com/@patternfly/patternfly/patternfly.css" 
+    crossorigin="anonymous"
+  >
+  <title>AIDB</title>
+</head>
+<body>
+  <div class="pf-c-backdrop">
+  <div class="pf-l-bullseye">
+    <div class="pf-c-wizard">
+      <div class="pf-c-wizard__header">
+        <button class="pf-c-button pf-m-plain pf-c-wizard__close" type="button" aria-label="Close">
+          <i class="fas fa-times" aria-hidden="true"></i>
+        </button>
+        <h1 class="pf-c-title pf-m-3xl pf-c-wizard__title">Inventory planner</h1>
+        <p class="pf-c-wizard__description">Create map of your physical infrastructure.</p>
+      </div>
+      <button aria-label="Wizard Header Toggle" class="pf-c-wizard__toggle" aria-expanded="false">
+        <ol class="pf-c-wizard__toggle-list">
+          <li class="pf-c-wizard__toggle-list-item">
+            <span class="pf-c-wizard__toggle-num">2</span>Configuration
+            <i class="fas fa-angle-right pf-c-wizard__toggle-separator" aria-hidden="true"></i>
+          </li>
+          <li class="pf-c-wizard__toggle-list-item">Substep B</li>
+        </ol>
+        <i class="fas fa-caret-down pf-c-wizard__toggle-icon" aria-hidden="true"></i>
+      </button>
+      <div class="pf-c-wizard__outer-wrap">
+        <div class="pf-c-wizard__inner-wrap">
+          <nav class="pf-c-wizard__nav" aria-label="Steps">
+            <ol class="pf-c-wizard__nav-list">
+              <li class="pf-c-wizard__nav-item">
+                <a href="#" class="pf-c-wizard__nav-link">Information</a>
+              </li>
+              <li class="pf-c-wizard__nav-item">
+                <a href="#" class="pf-c-wizard__nav-link pf-m-current">Configuration</a>
+                <ol class="pf-c-wizard__nav-list">
+                  <li class="pf-c-wizard__nav-item">
+                    <a href="#" class="pf-c-wizard__nav-link">Substep A</a>
+                  </li>
+                  <li class="pf-c-wizard__nav-item">
+                    <a href="#" class="pf-c-wizard__nav-link pf-m-current" aria-current="page">Substep B</a>
+                  </li>
+                  <li class="pf-c-wizard__nav-item">
+                    <a href="#" class="pf-c-wizard__nav-link">Substep C</a>
+                  </li>
+                </ol>
+              </li>
+              <li class="pf-c-wizard__nav-item">
+                <a href="#" class="pf-c-wizard__nav-link">Additional</a>
+              </li>
+              <li class="pf-c-wizard__nav-item">
+                <a href="#" class="pf-c-wizard__nav-link pf-m-disabled" aria-disabled="true" tabindex="-1">Review</a>
+              </li>
+            </ol>
+          </nav>
+          <main class="pf-c-wizard__main">
+            <div class="pf-c-wizard__main-body">
+              <p>Wizard content goes here</p>
+            </div>
+          </main>
+        </div>
+        <footer class="pf-c-wizard__footer">
+          <button class="pf-c-button pf-m-primary" type="submit">Next</button>
+          <button class="pf-c-button pf-m-secondary" type="button">Back</button>
+          <button class="pf-c-button pf-m-link" type="button">Cancel</button>
+        </footer>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
