@@ -18,10 +18,10 @@ func GetLocations(c echo.Context) error {
 	}
 
 	//create new html table and populate it with data
-	var mytab HtmlTable
-	mytab.header = "<table><tr>" //here append <th> tags and </tr> which is table header
-	mytab.rows = "<tr><td>"      //here append <td> tags and </td></tr> which is table data
-	mytab.footer = "</table>"
+
+	Page.header = "<table><tr>" //here append <th> tags and </tr> which is table header
+	Page.rows = "<tr><td>"      //here append <td> tags and </td></tr> which is table data
+	Page.footer = "</table>"
 
 	//for _, lc := range locs {
 	//	rw := fmt.Sprintln("</td><td>", lc.description, "</td><td>", lc.country, "</td><td>", lc.town, "</td><td>", lc.street, "</td>")
@@ -30,5 +30,5 @@ func GetLocations(c echo.Context) error {
 	fmt.Println()
 	fmt.Println(locs)
 
-	return c.HTML(http.StatusOK, HEADER+mytab.header+mytab.rows+mytab.footer+FOOTER)
+	return c.HTML(http.StatusOK, HEADER+Page.header+Page.rows+Page.footer+FOOTER)
 }
