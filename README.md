@@ -40,3 +40,12 @@ more can be found at [Echo guide](https://echo.labstack.com/guide)
 > go get -u github.com/lib/pq
 
 for connecting to AIDB (postgresql 10)
+
+
+> New-SelfSignedCertificate -CertStoreLocation Cert:\LocalMachine\My -DnsName "mysite.local" -FriendlyName "MySiteCert" -NotAfter (Get-Date).AddYears(10)
+
+
+TODO:
+
+* create roles
+* db polling
